@@ -16,3 +16,6 @@ steps:
         "push",
         "southamerica-east1-docker.pkg.dev/shop-microservices-472915/image-registry/auth-ms",
       ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY

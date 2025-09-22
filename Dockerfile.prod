@@ -16,11 +16,11 @@ COPY --from=deps /usr/src/app/node_modules ./node_modules
 
 COPY . .
 
+RUN npx prisma generate
+
 RUN npm run build
 
 RUN npm ci -f --only=production && npm cache clean --force
-
-RUN npx prisma generate
 
 FROM node:21-alpine3.19 as prod
 
